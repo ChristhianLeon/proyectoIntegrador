@@ -1,264 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/src/assets/images/desarrollo-movil.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Servicios</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JCSOFT - Planes y Tarifas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/servicios.css" />
 </head>
-
 <body>
-    <nav class="bg-gray-900 border-gray-800">
+
+   <nav class="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 fixed w-full z-50 top-0 start-0">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="../assets/images/desarrollo-movil.png" class="h-8" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">JCSoft</span>
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-bold whitespace-nowrap text-blue-600 dark:text-blue-500">JCSoft</span>
             </a>
-            <button data-collapse-toggle="navbar-default" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700"
-                aria-controls="navbar-default" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 1h15M1 7h15M1 13h15" />
+            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Abrir menú</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                 </svg>
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul
-                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-800 rounded-lg bg-gray-900 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-gray-900">
-                    <li>
-                        <a href="/index.html"
-                            class="block py-2 px-3 text-white bg-blue-600 rounded-sm md:bg-transparent md:text-blue-400 md:p-0"
-                            aria-current="page">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="./nosotros.html"
-                            class="block py-2 px-3 text-gray-400 rounded-sm hover:bg-gray-800 hover:text-white md:hover:bg-transparent md:border-0 md:hover:text-blue-400 md:p-0">Nosotros</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-400 rounded-sm hover:bg-gray-800 hover:text-white md:hover:bg-transparent md:border-0 md:hover:text-blue-400 md:p-0">Servicios</a>
-                    </li>
-                    <li>
-                        <a href="./cotizar.html"
-                            class="block py-2 px-3 text-gray-400 rounded-sm hover:bg-gray-800 hover:text-white md:hover:bg-transparent md:border-0 md:hover:text-blue-400 md:p-0">Cotizaciones</a>
-                    </li>
-                    <li>
-                        <a href="./contacto.html"
-                            class="block py-2 px-3 text-gray-400 rounded-sm hover:bg-gray-800 hover:text-white md:hover:bg-transparent md:border-0 md:hover:text-blue-400 md:p-0">Contactanos</a>
-                    </li>
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-800 dark:border-gray-700">
+                    <li><a href="/index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500">Inicio</a></li>
+                    <li><a href="/src/pages/nosotros.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500">Nosotros</a></li>
+                    <li><a href="/src/pages/servicios.html" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Servicios</a></li>
+                    <li><a href="/src/pages/cotizar.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500">Cotizaciones</a></li>
+                    <li><a href="/src/pages/historial.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500">Historial</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    SERVICIOS
-    <div class="bg-white py-24 sm:py-32">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl lg:text-center">
-                <h2 class="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-                <p
-                    class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
-                    Everything you need to deploy your app</p>
-                <p class="mt-6 text-lg/8 text-gray-700">Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-                    Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.</p>
-            </div>
-            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-                    <div class="relative pl-16">
-                        <dt class="text-base/7 font-semibold text-gray-900">
-                            <div
-                                class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    data-slot="icon" aria-hidden="true" class="size-6 text-white">
-                                    <path
-                                        d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            Push to deploy
-                        </dt>
-                        <dd class="mt-2 text-base/7 text-gray-600">Morbi viverra dui mi arcu sed. Tellus semper
-                            adipiscing suspendisse semper morbi. Odio urna massa nunc massa.</dd>
-                    </div>
-                    <div class="relative pl-16">
-                        <dt class="text-base/7 font-semibold text-gray-900">
-                            <div
-                                class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    data-slot="icon" aria-hidden="true" class="size-6 text-white">
-                                    <path
-                                        d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            SSL certificates
-                        </dt>
-                        <dd class="mt-2 text-base/7 text-gray-600">Sit quis amet rutrum tellus ullamcorper ultricies
-                            libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.</dd>
-                    </div>
-                    <div class="relative pl-16">
-                        <dt class="text-base/7 font-semibold text-gray-900">
-                            <div
-                                class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    data-slot="icon" aria-hidden="true" class="size-6 text-white">
-                                    <path
-                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            Simple queues
-                        </dt>
-                        <dd class="mt-2 text-base/7 text-gray-600">Quisque est vel vulputate cursus. Risus proin diam
-                            nunc commodo. Lobortis auctor congue commodo diam neque.</dd>
-                    </div>
-                    <div class="relative pl-16">
-                        <dt class="text-base/7 font-semibold text-gray-900">
-                            <div
-                                class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    data-slot="icon" aria-hidden="true" class="size-6 text-white">
-                                    <path
-                                        d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            Advanced security
-                        </dt>
-                        <dd class="mt-2 text-base/7 text-gray-600">Arcu egestas dolor vel iaculis in ipsum mauris.
-                            Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.</dd>
-                    </div>
-                </dl>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <div class="bg-gray-900 py-10 text-gray-400 border-t border-gray-800">
-            <div class="container px-6 mx-auto">
-                <div class="-mx-4 flex flex-wrap justify-between">
-                    <div class="px-4 my-4 w-full xl:w-1/4">
-                        <a href="/" class="block w-48 mb-6">
-                            <div class="flex items-center gap-3">
-                                <div class="bg-blue-600 p-2 rounded-lg">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                                    </svg>
-                                </div>
-                                <span class="text-2xl font-bold text-white tracking-wider">JCSoft</span>
-                            </div>
-                        </a>
-                        <p class="text-justify text-sm leading-relaxed">
-                            Transformamos ideas en soluciones tecnológicas escalables. Somos especialistas en la
-                            creación de software
-                            a medida, arquitecturas sólidas y experiencias digitales de alto impacto para potenciar tu
-                            negocio.
-                        </p>
+
+    
+    <main class="contenedor">
+        
+        <header class="encabezado">
+            <h1 class="titulo">Planes, Tarifas y Vigencia de Servicios</h1>
+            <p class="subtitulo">Esquemas comerciales diseñados con costos transparentes, plazos de ejecución definidos y tiempos de soporte estipulados.</p>
+        </header>
+
+        
+        <section class="grid-planes">
+
+            
+            <article class="tarjeta">
+                <div class="cuerpo">
+                    <h2 class="nombre">Plan Impulso</h2>
+                    <span class="categoria">Landing Page</span>
+                    
+                    <div class="caja-precio">
+                        <span class="precio">$300</span>
+                        <span class="pago">Pago único</span>
                     </div>
 
-                    <!-- Sección 2: Servicios -->
-                    <div class="px-4 my-4 w-full sm:w-auto">
-                        <div>
-                            <h2
-                                class="inline-block text-lg font-semibold text-white pb-2 mb-4 border-b-2 border-blue-600">
-                                Servicios
-                                Especializados</h2>
-                        </div>
-                        <ul class="leading-8 text-sm">
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Desarrollo Backend (Java,
-                                    Python)</a></li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Apps Móviles (Flutter)</a>
-                            </li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Arquitectura de Datos
-                                    (PostgreSQL)</a></li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Integración de APIs (Firebase,
-                                    REST)</a>
-                            </li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Despliegue y Servidores
-                                    (Apache)</a></li>
-                        </ul>
+                    <div class="info">
+                        <strong>Vigencia / Soporte:</strong> 30 días de garantía post-entrega y 1 año de hosting básico incluido.
                     </div>
-                    <div class="px-4 my-4 w-full sm:w-auto">
-                        <div>
-                            <h2
-                                class="inline-block text-lg font-semibold text-white pb-2 mb-4 border-b-2 border-blue-600">
-                                Compañía
-                            </h2>
-                        </div>
-                        <ul class="leading-8 text-sm">
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Sobre Nosotros</a></li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Nuestro Portafolio</a></li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Soporte Técnico</a></li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Términos y Condiciones</a>
-                            </li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Política de Privacidad</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="px-4 my-4 w-full sm:w-auto xl:w-1/5">
-                        <div>
-                            <h2
-                                class="inline-block text-lg font-semibold text-white pb-2 mb-4 border-b-2 border-blue-600">
-                                Conecta con
-                                Nosotros</h2>
-                        </div>
-                        <p class="mb-4 text-sm">📍 Base de operaciones: Quito, Ecuador.</p>
-                        <div class="flex gap-2">
-                            <!-- Facebook -->
-                            <a href="#"
-                                class="inline-flex items-center justify-center h-8 w-8 bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-colors">
-                                <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 320 512">
-                                    <path
-                                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
-                                    </path>
-                                </svg>
-                            </a>
-                            <a href="#"
-                                class="inline-flex items-center justify-center h-8 w-8 bg-gray-800 rounded-full hover:bg-blue-400 hover:text-white transition-colors">
-                                <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 512 512">
-                                    <path
-                                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
-                                    </path>
-                                </svg>
-                            </a>
-                            <a href="#"
-                                class="inline-flex items-center justify-center h-8 w-8 bg-gray-800 rounded-full hover:bg-blue-700 hover:text-white transition-colors">
-                                <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 448 512">
-                                    <path
-                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-                                    </path>
-                                </svg>
-                            </a>
-                            <a href="#"
-                                class="inline-flex items-center justify-center h-8 w-8 bg-gray-800 rounded-full hover:bg-gray-600 hover:text-white transition-colors">
-                                <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 496 512">
-                                    <path
-                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                                    </path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+
+                    <ul class="lista">
+                        <li>✔️ 1 Página optimizada</li>
+                        <li>✔️ Diseño responsivo</li>
+                        <li>✔️ Formulario interactivo</li>
+                        <li>✔️ Estimado: 15 horas de código</li>
+                    </ul>
                 </div>
-                <div class="mt-8 pt-4 border-t border-gray-800 text-sm text-center">
-                    <p>&copy; 2026 JCSoft. Todos los derechos reservados.</p>
+
+                <button type="button" class="boton" onclick="seleccionarPlan('Plan Impulso', 300)">Cotizar este plan</button>
+                <button type="button" data-modal-target="modalLanding" data-modal-toggle="modalLanding" class="enlace-detalle">Ver Detalles</button>
+            </article>
+
+            
+            <article class="tarjeta destacada">
+                <span class="destaque">Más Popular</span>
+                <div class="cuerpo">
+                    <h2 class="nombre">Plan Corporativo</h2>
+                    <span class="categoria">Web Multi-sección</span>
+                    
+                    <div class="caja-precio">
+                        <span class="precio">$650</span>
+                        <span class="pago">Pago 50 / 50</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>Vigencia / Soporte:</strong> 60 días de garantía y actualización de contenidos por 6 meses.
+                    </div>
+
+                    <ul class="lista">
+                        <li>✔️ 3 a 5 secciones clave</li>
+                        <li>✔️ Catálogo interactivo</li>
+                        <li>✔️ SEO técnico inicial</li>
+                        <li>✔️ Estimado: 35 horas de código</li>
+                    </ul>
+                </div>
+
+                <button type="button" class="boton" onclick="seleccionarPlan('Plan Corporativo', 650)">Cotizar este plan</button>
+                <button type="button" data-modal-target="modalCorporativo" data-modal-toggle="modalCorporativo" class="enlace-detalle">Ver Detalles</button>
+            </article>
+
+            
+            <article class="tarjeta">
+                <div class="cuerpo">
+                    <h2 class="nombre">Plan Software Pro</h2>
+                    <span class="categoria">Sistema Dinámico</span>
+                    
+                    <div class="caja-precio">
+                        <span class="precio">$1,200</span>
+                        <span class="pago">Pago por hitos</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>Vigencia / Soporte:</strong> 3 meses de garantía integral y póliza de soporte técnico opcional.
+                    </div>
+
+                    <ul class="lista">
+                        <li>✔️ Base de datos relacional</li>
+                        <li>✔️ Panel de administración</li>
+                        <li>✔️ Arquitectura escalable</li>
+                        <li>✔️ Estimado: 70 horas de código</li>
+                    </ul>
+                </div>
+
+                <button type="button" class="boton" onclick="seleccionarPlan('Plan Software Pro', 1200)">Cotizar este plan</button>
+                <button type="button" data-modal-target="modalSoftware" data-modal-toggle="modalSoftware" class="enlace-detalle">Ver Detalles</button>
+            </article>
+
+           
+            <article class="tarjeta">
+                <div class="cuerpo">
+                    <h2 class="nombre">Plan Mentoría</h2>
+                    <span class="categoria">Asesoramiento Técnico</span>
+                    
+                    <div class="caja-precio">
+                        <span class="precio">$150</span>
+                        <span class="pago">Bono mensual</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>Vigencia / Soporte:</strong> Las horas contratadas tienen una validez de 30 días calendario.
+                    </div>
+
+                    <ul class="lista">
+                        <li>✔️ Consultoría personalizada</li>
+                        <li>✔️ Revisión de código fuente</li>
+                        <li>✔️ Guía de arquitectura web</li>
+                        <li>✔️ Sesiones por videoconferencia</li>
+                    </ul>
+                </div>
+
+                <button type="button" class="boton" onclick="seleccionarPlan('Plan Mentoría', 150)">Cotizar este plan</button>
+                <button type="button" data-modal-target="modalAsesoria" data-modal-toggle="modalAsesoria" class="enlace-detalle">Ver Detalles</button>
+            </article>
+
+        </section>
+
+    
+        <div id="modalLanding" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <div class="contenido relative bg-white rounded-lg shadow">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                        <h3 class="modal-titulo">Detalles: Plan Impulso</h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modalLanding">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+                        </button>
+                    </div>
+                    <div class="p-4 md:p-5 space-y-4 text-sm">
+                        <p>Solución ágil para captar clientes potenciales con un costo cerrado de $300.</p>
+                        <ul class="modal-lista">
+                            <li><strong>Plazo de entrega:</strong> 3 a 5 días hábiles tras recibir el contenido base.</li>
+                            <li><strong>Vigencia del soporte:</strong> 30 días para corrección de detalles técnicos imprevistos.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <script type="module" src="../js/main.js"></script>
+
+        
+        <div id="modalCorporativo" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <div class="contenido relative bg-white rounded-lg shadow">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                        <h3 class="modal-titulo">Detalles: Plan Corporativo</h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modalCorporativo">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+                        </button>
+                    </div>
+                    <div class="p-4 md:p-5 space-y-4 text-sm">
+                        <p>Diseñado para empresas con un costo total de $650 (50% de anticipo y 50% al finalizar).</p>
+                        <ul class="modal-lista">
+                            <li><strong>Plazo de entrega:</strong> 10 a 15 días hábiles.</li>
+                            <li><strong>Vigencia del soporte:</strong> 60 días de garantía técnica y 6 meses de pequeños ajustes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="modalSoftware" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <div class="contenido relative bg-white rounded-lg shadow">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                        <h3 class="modal-titulo">Detalles: Plan Software Pro</h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modalSoftware">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+                        </button>
+                    </div>
+                    <div class="p-4 md:p-5 space-y-4 text-sm">
+                        <p>Desarrollo robusto de sistemas avanzados con un valor base de $1,200.</p>
+                        <ul class="modal-lista">
+                            <li><strong>Plazo de entrega:</strong> Estipulado por hitos contractuales.</li>
+                            <li><strong>Vigencia del soporte:</strong> 3 meses de garantía por fallas de lógica o base de datos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalAsesoria" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <div class="contenido relative bg-white rounded-lg shadow">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                        <h3 class="modal-titulo">Detalles: Plan Mentoría</h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modalAsesoria">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+                        </button>
+                    </div>
+                    <div class="p-4 md:p-5 space-y-4 text-sm">
+                        <p>Acompañamiento técnico experto por $150 al mes.</p>
+                        <ul class="modal-lista">
+                            <li><strong>Vigencia del paquete:</strong> Las 10 horas tienen una validez estricta de 30 días calendario.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="/src/js/servicios.js"></script>
 </body>
-
 </html>
