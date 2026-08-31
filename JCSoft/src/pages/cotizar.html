@@ -23,14 +23,11 @@
       
       <div class="nav-menu">
         <a href="/index.html" class="nav-link">Inicio</a>
-        <a href="/src/pages/nosotros.html" class="nav-link">Nosotros</a>
-        <a href="/src/pages/servicios.html" class="nav-link">Servicios</a>
-        <a href="/src/pages/cotizar.html" class="nav-link activo">Cotizaciones</a>
-        <a href="/src/pages/historial.html" class="nav-link">Historial</a>
+        <a href="./nosotros.html" class="nav-link">Nosotros</a>
+        <a href="./servicios.html" class="nav-link">Servicios</a>
+        <a href="#" class="nav-link activo">Cotizaciones</a>
+        <a href="./contacto.html" class="nav-link">Contactanos</a>
       </div>
-    </div>
-  </nav>
-
     </div>
   </nav>
 
@@ -81,6 +78,28 @@
           </div>
         </div>
 
+        <div class="grid-dos-columnas">
+          <div class="grupo-campo">
+            <label class="etiqueta">Cédula / RUC</label>
+            <input type="text" id="inputRUC" placeholder="Ej. 1234567890001" class="campo">
+          </div>
+          <div class="grupo-campo">
+            <label class="etiqueta">Dirección</label>
+            <input type="text" id="inputDireccion" placeholder="Ej. El Beaterio, Quito" class="campo">
+          </div>
+        </div>
+
+        <div class="grid-dos-columnas">
+          <div class="grupo-campo">
+            <label class="etiqueta">Correo Electrónico</label>
+            <input type="email" id="inputCorreo" placeholder="Ej. gerencia@empresa.com" class="campo">
+          </div>
+          <div class="grupo-campo">
+            <label class="etiqueta">Teléfono</label>
+            <input type="tel" id="inputTelefono" placeholder="Ej. 0998965354" class="campo">
+          </div>
+        </div>
+
         <div class="grupo-campo">
           <label class="etiqueta">Modelo del Sistema / Alcance</label>
           <input type="text" id="inputModelo" placeholder="Ej. Sistema Web Escalable / Microservicios" class="campo">
@@ -103,27 +122,29 @@
             </select>
           </div>
           <div class="grupo-campo">
-            <label class="etiqueta-chica">Backend Framework</label>
-            <select id="selectBackend" class="campo-chico">
-              <option value="javaSpring">Java Spring Boot ($250)</option>
-              <option value="python">Python FastAPI/Django ($200)</option>
-              <option value="otras">Otras tecnologías ($0)</option>
+            <label class="etiqueta-chica">SSL / Certificados</label>
+            <select id="selectSSL" class="campo-chico">
+              <option value="Propio">Propio ($500)</option>
+              <option value="Otro">Otro ($100)</option>
+              <option value="Ninguno">Ninguno ($0)</option>
             </select>
           </div>
           <div class="grupo-campo">
-            <label class="etiqueta-chica">Frontend / Mobile</label>
-            <select id="selectFrontend" class="campo-chico">
-              <option value="flutter">Flutter / Cross-Platform ($250)</option>
-              <option value="jsf">JSF / Enterprise Web ($200)</option>
-              <option value="otras">Otras tecnologías ($0)</option>
+            <label class="etiqueta-chica">Herramientas y Licencias</label>
+            <select id="selectHerramientasLicencias" class="campo-chico">
+              <option value="Pasarelas de pago">Pasarelas de pago ($250)</option>
+              <option value="API de mapas y geolocalización">API de mapas y geolocalización ($200)</option>
+              <option value="Servicios de mensajería (SMS/Email)">Servicios de mensajería (SMS/Email) ($300)</option>
+              <option value="Herramientas de análisis (Analytics)">Herramientas de análisis (Analytics) ($200)</option>
+              <option value="ninguno">Ninguno ($0)</option>
             </select>
           </div>
           <div class="grupo-campo">
             <label class="etiqueta-chica">Infraestructura / Hosting</label>
             <select id="selectHosting" class="campo-chico">
-              <option value="dedicado">Servidor Dedicado / VPS ($150)</option>
-              <option value="compartido">Hosting Compartido ($60)</option>
-              <option value="otros">Otros ($0)</option>
+              <option value="Alojamiento web (Hosting)">Alojamiento web (Hosting) ($150)</option>
+              <option value="Servidores en la nube (Cloud Computing)">Servidores en la nube (Cloud Computing) ($600)</option>
+              <option value="propio/NA">Propio / NA ($0)</option>
             </select>
           </div>
         </div>
@@ -189,8 +210,24 @@
               <p id="pdfCliente" class="valor-pdf">-</p>
             </div>
             <div>
+              <p class="negrita-pdf">Cédula / RUC:</p>
+              <p id="pdfRUC" class="valor-pdf">-</p>
+            </div>
+            <div>
               <p class="negrita-pdf">Modelo / Alcance:</p>
               <p id="pdfModelo" class="valor-pdf">-</p>
+            </div>
+            <div>
+              <p class="negrita-pdf">Dirección:</p>
+              <p id="pdfDireccion" class="valor-pdf">-</p>
+            </div>
+            <div>
+              <p class="negrita-pdf">Correo:</p>
+              <p id="pdfCorreo" class="valor-pdf">-</p>
+            </div>
+            <div>
+              <p class="negrita-pdf">Teléfono:</p>
+              <p id="pdfTelefono" class="valor-pdf">-</p>
             </div>
             <div class="col-span-2">
               <p class="negrita-pdf">Descripción / Necesidad:</p>
@@ -209,8 +246,8 @@
               </thead>
               <tbody>
                 <tr><td>Base de Datos</td><td id="pdfBD">-</td></tr>
-                <tr><td>Backend Framework</td><td id="pdfBack">-</td></tr>
-                <tr><td>Frontend / Mobile</td><td id="pdfFront">-</td></tr>
+                <tr><td>SSL / Certificados</td><td id="pdfSSL">-</td></tr>
+                <tr><td>Herramientas y Licencias</td><td id="pdfHerramientas">-</td></tr>
                 <tr><td>Infraestructura</td><td id="pdfHost">-</td></tr>
               </tbody>
             </table>
@@ -234,10 +271,22 @@
               <div class="fila-total negrita border-t"><span>Subtotal:</span><span id="resSubtotal">$0.00</span></div>
               <div class="fila-total"><span>IVA (15%):</span><span id="resIVA">$0.00</span></div>
               <div class="fila-total rojo"><span>Retención (2%):</span><span id="resRetencion">-$0.00</span></div>
+              <div class="fila-total amarillo"><span>Riesgo (30%):</span><span id="resRiesgo">$0.00</span></div>
               <div class="fila-total-final">
                 <span>Total Neto:</span>
                 <span id="resTotal">$0.00</span>
               </div>
+            </div>
+
+            <div class="firma-cotizacion">
+              <div class="linea-firma"></div>
+              <p class="nombre-firma">Joseph Collaguazo</p>
+              <p class="cargo-firma">CEO JCSoft</p>
+            </div>
+
+            <div class="notas-cotizacion">
+              <h4 class="subtitulo-notas">Términos de la cotización:</h4>
+              <p class="texto-notas">Los valores comerciales detallados en este documento tienen una validez de <strong>15 días corridos</strong>. Transcurrido este tiempo, la propuesta económica quedará sin efecto y deberá realizarse una nueva estimación basada en los costos vigentes del mercado y la disponibilidad de recursos.</p>
             </div>
           </div>
         </div>
@@ -269,7 +318,6 @@
 
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script type="module" src="/src/js/cotizador.js"></script>
 </body>
 

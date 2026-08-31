@@ -1,32 +1,34 @@
-import { jsPDF } from "jspdf";
+import html2pdf from "html2pdf.js";
 
-const TARIFAS_DEFECTO = {
+let TARIFAS_DEFECTO = {
   web: 15,
   software: 25,
   acompanamiento: 20
 };
 
-const PRECIOS_STACK = {
+let PRECIOS_STACK = {
   selectBD: {
-    postgres: 150,
-    oracle: 300,
-    mariadb: 120,
-    otras: 0
+    "postgres": 500,
+    "oracle": 1200,
+    "mariadb": 300,
+    "otras": 0
   },
-  selectBackend: {
-    javaSpring: 250,
-    python: 200,
-    otras: 0
+  selectHerramientasLicencias: {
+    "Pasarelas de pago": 250,
+    "API de mapas y geolocalización": 200,
+    "Servicios de mensajería (SMS/Email)": 300,
+    "Herramientas de análisis (Analytics)": 200,
+    "ninguno": 0
   },
-  selectFrontend: {
-    flutter: 250,
-    jsf: 200,
-    otras: 0
+  selectSSL: {
+    "Propio": 500,
+    "Otro": 100,
+    "Ninguno": 0
   },
   selectHosting: {
-    dedicado: 150,
-    compartido: 60,
-    otros: 0
+    "Alojamiento web (Hosting)": 150,
+    "Servidores en la nube (Cloud Computing)": 600,
+    "propio/NA": 0
   }
 };
 
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function cargarTarifasGuardadas() {
-  const guardadas = localStorage.getItem("jcsoft_tarifas");
+  let guardadas = localStorage.getItem("jcsoft_tarifas");
   if (guardadas) {
     try {
       tarifasActuales = JSON.parse(guardadas);
@@ -65,14 +67,14 @@ function inicializarEventos() {
   document.getElementById("btnGuardarTarifas").addEventListener("click", guardarTarifas);
   document.getElementById("btnGenerarPDF").addEventListener("click", descargarPDF);
 
-  const inputsGenerantes = [
-    "inputCliente", "selectProducto", "inputModelo", "inputNecesidad",
-    "selectBD", "selectBackend", "selectFrontend", "selectHosting",
+  let inputsGenerantes = [
+    "inputCliente", "inputRUC", "inputDireccion", "inputCorreo", "inputTelefono", "selectProducto", "inputModelo", "inputNecesidad",
+    "selectBD", "selectSSL", "selectHerramientasLicencias", "selectHosting",
     "hPlan", "hDes", "hPru", "hImp", "hMan"
   ];
 
   inputsGenerantes.forEach(id => {
-    const elem = document.getElementById(id);
+    let elem = document.getElementById(id);
     if (elem) {
       elem.addEventListener("input", calcularCotizacion);
       elem.addEventListener("change", calcularCotizacion);
@@ -81,8 +83,8 @@ function inicializarEventos() {
 }
 
 function login() {
-  const u = document.getElementById("inputUsuario").value;
-  const c = document.getElementById("inputClave").value;
+  let u = document.getElementById("inputUsuario").value;
+  let c = document.getElementById("inputClave").value;
 
   if (u === "admin" && c === "admin") {
     document.getElementById("vista-login").classList.add("hidden");
@@ -101,10 +103,10 @@ function logout() {
 }
 
 function cambiarPestana(tab) {
-  const tabCotizar = document.getElementById("tabCotizar");
-  const tabAdmin = document.getElementById("tabAdmin");
-  const areaCotizador = document.getElementById("areaCotizador");
-  const areaAdministracion = document.getElementById("areaAdministracion");
+  let tabCotizar = document.getElementById("tabCotizar");
+  let tabAdmin = document.getElementById("tabAdmin");
+  let areaCotizador = document.getElementById("areaCotizador");
+  let areaAdministracion = document.getElementById("areaAdministracion");
 
   if (tab === "cotizar") {
     tabCotizar.className = "pestana pestana-activa";
@@ -120,8 +122,8 @@ function cambiarPestana(tab) {
 }
 
 function sincronizarFecha() {
-  const hoy = new Date();
-  const fechaStr = hoy.toLocaleDateString("es-EC", {
+  let hoy = new Date();
+  let fechaStr = hoy.toLocaleDateString("es-EC", {
     year: "numeric",
     month: "long",
     day: "numeric"
@@ -130,7 +132,7 @@ function sincronizarFecha() {
 }
 
 function sugerirHoras() {
-  const total = parseFloat(document.getElementById("inputHorasTotales").value) || 0;
+  let total = parseFloat(document.getElementById("inputHorasTotales").value) || 0;
   if (total <= 0) return;
 
   document.getElementById("hPlan").value = Math.round(total * 0.10);
@@ -143,45 +145,54 @@ function sugerirHoras() {
 }
 
 function calcularCotizacion() {
-  const cliente = document.getElementById("inputCliente").value || "Cliente no especificado";
-  const servicioKey = document.getElementById("selectProducto").value;
-  const modelo = document.getElementById("inputModelo").value || "Sistema Web Personalizado";
-  const necesidad = document.getElementById("inputNecesidad").value || "Sin descripción adicional.";
+  let cliente = document.getElementById("inputCliente").value || "Cliente no especificado";
+  let ruc = document.getElementById("inputRUC").value || "No especificado";
+  let direccion = document.getElementById("inputDireccion").value || "No especificada";
+  let correo = document.getElementById("inputCorreo").value || "No especificado";
+  let telefono = document.getElementById("inputTelefono").value || "No especificado";
+  let servicioKey = document.getElementById("selectProducto").value;
+  let modelo = document.getElementById("inputModelo").value || "Sistema Web Personalizado";
+  let necesidad = document.getElementById("inputNecesidad").value || "Sin descripción adicional.";
 
-  const tarifaHora = tarifasActuales[servicioKey] || 0;
+  let tarifaHora = tarifasActuales[servicioKey] || 0;
 
-  const selectBD = document.getElementById("selectBD");
-  const selectBackend = document.getElementById("selectBackend");
-  const selectFrontend = document.getElementById("selectFrontend");
-  const selectHosting = document.getElementById("selectHosting");
+  let selectBD = document.getElementById("selectBD");
+  let selectSSL = document.getElementById("selectSSL");
+  let selectHerramientasLicencias = document.getElementById("selectHerramientasLicencias");
+  let selectHosting = document.getElementById("selectHosting");
 
-  const costoBD = PRECIOS_STACK.selectBD[selectBD.value] || 0;
-  const costoBack = PRECIOS_STACK.selectBackend[selectBackend.value] || 0;
-  const costoFront = PRECIOS_STACK.selectFrontend[selectFrontend.value] || 0;
-  const costoHost = PRECIOS_STACK.selectHosting[selectHosting.value] || 0;
+  let costoBD = PRECIOS_STACK.selectBD[selectBD.value] || 0;
+  let costoSSL = PRECIOS_STACK.selectSSL[selectSSL.value] || 0;
+  let costoHerramientas = PRECIOS_STACK.selectHerramientasLicencias[selectHerramientasLicencias.value] || 0;
+  let costoHost = PRECIOS_STACK.selectHosting[selectHosting.value] || 0;
 
-  const hPlan = parseFloat(document.getElementById("hPlan").value) || 0;
-  const hDes = parseFloat(document.getElementById("hDes").value) || 0;
-  const hPru = parseFloat(document.getElementById("hPru").value) || 0;
-  const hImp = parseFloat(document.getElementById("hImp").value) || 0;
-  const hMan = parseFloat(document.getElementById("hMan").value) || 0;
+  let hPlan = parseFloat(document.getElementById("hPlan").value) || 0;
+  let hDes = parseFloat(document.getElementById("hDes").value) || 0;
+  let hPru = parseFloat(document.getElementById("hPru").value) || 0;
+  let hImp = parseFloat(document.getElementById("hImp").value) || 0;
+  let hMan = parseFloat(document.getElementById("hMan").value) || 0;
 
-  const totalHoras = hPlan + hDes + hPru + hImp + hMan;
+  let totalHoras = hPlan + hDes + hPru + hImp + hMan;
 
-  const costoOperativo = totalHoras * tarifaHora;
-  const costoLicencias = costoBD + costoBack + costoFront + costoHost;
-  const subtotal = costoOperativo + costoLicencias;
-  const iva = subtotal * 0.15;
-  const retencion = subtotal * 0.02;
-  const totalNeto = subtotal + iva - retencion;
+  let costoOperativo = totalHoras * tarifaHora;
+  let costoLicencias = costoBD + costoSSL + costoHerramientas + costoHost;
+  let subtotal = costoOperativo + costoLicencias;
+  let iva = subtotal * 0.15;
+  let retencion = subtotal * 0.02;
+  let riesgo = subtotal * 0.30;
+  let totalNeto = subtotal + iva - retencion + riesgo;
 
   document.getElementById("pdfCliente").innerText = cliente;
+  document.getElementById("pdfRUC").innerText = ruc;
   document.getElementById("pdfModelo").innerText = modelo;
+  document.getElementById("pdfDireccion").innerText = direccion;
+  document.getElementById("pdfCorreo").innerText = correo;
+  document.getElementById("pdfTelefono").innerText = telefono;
   document.getElementById("pdfNecesidad").innerText = necesidad;
 
   document.getElementById("pdfBD").innerText = selectBD.options[selectBD.selectedIndex].text;
-  document.getElementById("pdfBack").innerText = selectBackend.options[selectBackend.selectedIndex].text;
-  document.getElementById("pdfFront").innerText = selectFrontend.options[selectFrontend.selectedIndex].text;
+  document.getElementById("pdfSSL").innerText = selectSSL.options[selectSSL.selectedIndex].text;
+  document.getElementById("pdfHerramientas").innerText = selectHerramientasLicencias.options[selectHerramientasLicencias.selectedIndex].text;
   document.getElementById("pdfHost").innerText = selectHosting.options[selectHosting.selectedIndex].text;
 
   document.getElementById("pdfTarifa").innerText = tarifaHora.toFixed(2);
@@ -196,13 +207,14 @@ function calcularCotizacion() {
   document.getElementById("resSubtotal").innerText = `$${subtotal.toFixed(2)}`;
   document.getElementById("resIVA").innerText = `$${iva.toFixed(2)}`;
   document.getElementById("resRetencion").innerText = `-$${retencion.toFixed(2)}`;
+  document.getElementById("resRiesgo").innerText = `$${riesgo.toFixed(2)}`;
   document.getElementById("resTotal").innerText = `$${totalNeto.toFixed(2)}`;
 }
 
 function guardarTarifas() {
-  const web = parseFloat(document.getElementById("tarifaWeb").value) || 0;
-  const software = parseFloat(document.getElementById("tarifaSoftware").value) || 0;
-  const acompanamiento = parseFloat(document.getElementById("tarifaAcompanamiento").value) || 0;
+  let web = parseFloat(document.getElementById("tarifaWeb").value) || 0;
+  let software = parseFloat(document.getElementById("tarifaSoftware").value) || 0;
+  let acompanamiento = parseFloat(document.getElementById("tarifaAcompanamiento").value) || 0;
 
   tarifasActuales = { web, software, acompanamiento };
   localStorage.setItem("jcsoft_tarifas", JSON.stringify(tarifasActuales));
@@ -212,36 +224,59 @@ function guardarTarifas() {
 }
 
 function descargarPDF() {
-  const elemento = document.getElementById("contenedor-proforma-pdf");
-  const clienteStr = document.getElementById("inputCliente").value.trim() || "Cliente";
+  let elemento = document.getElementById("contenedor-proforma-pdf");
 
-  const opciones = {
-    margin: 10,
+  if (!elemento) {
+    alert("Error: No se encontró el contenedor de la proforma.");
+    return;
+  }
+
+  elemento.style.display = "block";
+  elemento.style.width = "auto";
+  elemento.style.maxWidth = "none";
+  elemento.style.height = "auto";
+
+  let anchoCaptura = Math.max(elemento.scrollWidth, elemento.offsetWidth, 794);
+  let altoCaptura = Math.max(elemento.scrollHeight, elemento.offsetHeight, 1123);
+
+  elemento.style.width = `${anchoCaptura}px`;
+
+  let clienteStr = document.getElementById("inputCliente").value.trim() || "Cliente";
+
+  let opciones = {
+    margin: 0,
     filename: `Proforma_JCSoft_${clienteStr.replace(/\s+/g, "_")}.pdf`,
     image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
+    html2canvas: {
+      scale: 2,
+      useCORS: true,
+      logging: false,
+      allowTaint: true,
+      backgroundColor: "#ffffff",
+      width: anchoCaptura,
+      height: altoCaptura,
+      windowWidth: anchoCaptura,
+      windowHeight: altoCaptura,
+      scrollX: 0,
+      scrollY: 0
+    },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
   };
 
-  if (window.html2pdf) {
-    window.html2pdf().set(opciones).from(elemento).save();
-  } else {
-    alert("Error al cargar la librería de exportación a PDF.");
+  try {
+    setTimeout(() => {
+      html2pdf()
+        .set(opciones)
+        .from(elemento)
+        .save()
+        .then(() => console.log("PDF generado correctamente"))
+        .catch((error) => {
+          console.error("Error en html2pdf:", error);
+          alert("Error al generar el PDF: " + error.message);
+        });
+    }, 150);
+  } catch (error) {
+    console.error("Error al generar PDF:", error);
+    alert("Error al generar el PDF: " + error.message);
   }
-}
-
-function guardarEnHistorial(cotizacion) {
-  let historial = JSON.parse(localStorage.getItem("jcsoft_historial")) || [];
-  
- 
-  const nuevaCotizacion = {
-    id: Date.now(),
-    fecha: new Date().toLocaleDateString("es-EC"),
-    cliente: cotizacion.cliente,
-    servicio: cotizacion.servicio,
-    total: cotizacion.total
-  };
-
-  historial.push(nuevaCotizacion);
-  localStorage.setItem("jcsoft_historial", JSON.stringify(historial));
 }
